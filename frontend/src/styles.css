@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0b0012, #200029);
+  color: #fff;
+}
+
+/* === Fullscreen Container === */
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Floating Glowing Backgrounds === */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.3;
+  animation: float 10s infinite alternate ease-in-out;
+}
+
+.orb1 {
+  width: 450px;
+  height: 450px;
+  background: #ff0077;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.orb2 {
+  width: 550px;
+  height: 550px;
+  background: #9b00ff;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.orb3 {
+  width: 400px;
+  height: 400px;
+  background: #ff00ff;
+  top: 50%;
+  left: 45%;
+  animation-delay: 5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-40px) scale(1.05);
+  }
+}
+
+/* === Title Section === */
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #f63ebf;
+  text-shadow: 0 0 20px rgba(255, 0, 170, 0.6);
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 2rem;
+  z-index: 2;
+}
+
+/* === Form Styling === */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  width: 90%;
+  max-width: 500px;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(255, 0, 170, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+input:focus {
+  border-color: #ff66cc;
+  box-shadow: 0 0 15px rgba(255, 0, 170, 0.4);
+}
+
+/* === Button === */
+button {
+  width: 100%;
+  background: linear-gradient(135deg, #ff0080, #ff66cc);
+  border: none;
+  border-radius: 0.8rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(255, 0, 170, 0.3);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255, 0, 170, 0.6);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* === Status Message === */
+.message {
+  color: #ff99dd;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive for All Devices === */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  input {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 0.9rem;
+  }
+}
